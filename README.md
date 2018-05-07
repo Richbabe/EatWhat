@@ -2,6 +2,7 @@
 Wechat small app
 
 （1）EatWhat主页
+
 ![image](https://github.com/Richbabe/Richbabe.github.io/blob/master/img/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%BC%80%E5%8F%91%E6%88%AA%E5%9B%BE/EatWhat%E4%B8%BB%E9%A1%B5.jpg?raw=true)
 
 （2）EatWhat购物车
