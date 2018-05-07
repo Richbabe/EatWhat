@@ -50,5 +50,10 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  toMenu: function(e) {
+    wx.navigateTo({
+      url: '../menu/menu'
+    })
   }
 })

@@ -1,0 +1,86 @@
+ /*shoppingList.wxss*/
+
+.container {
+  margin: 0;
+  padding: 0;
+  background-color: #EEEEEE;
+}
+
+.column {
+  display: flex;
+  background-color:white;
+}
+
+.row {
+  display: block;
+  margin: 0;
+  background-color:white;
+}
+
+.shop-list {
+  margin:5px;
+  border-bottom:5px solid #EEEEEE;
+}
+
+.shop-item {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  padding-bottom: 10px;
+  border-bottom:4rpx solid #F8F8F8;
+}
+
+.red_hover{
+  border:2rpx solid red;
+}
+
+.minusButton{
+  color: #0000F0;
+  background-color: #ffe500;
+  display: block;
+  overflow: hidden;
+  height: 50rpx;
+  width: 50rpx;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.addButton{
+  color: #0000F0;
+  background-color: #ffe500;
+  overflow: hidden;
+  height: 50rpx;
+  width: 50rpx;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+}
+
+.food_name{
+  width: 30%;
+  font-size: 14px;
+  text-align: center;
+}
+
+.price {
+  font-size: 14px;
+  width: 20%;
+  text-align: center;
+}
+
+.amount {
+  font-size: 14px;
+}
+
+.button-text {
+  margin-top:-12px;
+}
+
+.food_amount {
+  width:25%;
+  display:flex;
+  justify-content:space-around;
+}

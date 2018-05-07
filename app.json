@@ -1,12 +1,31 @@
 {
   "pages":[
-    "pages/index/index",
+    "pages/menu/menu",
+    "pages/order/order",
+    "pages/shoppingList/shoppingList",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "食乜阿",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "菜单"
+      },
+      {
+        "pagePath" : "pages/shoppingList/shoppingList",
+        "text": "购物车"
+      }
+    ],
+    "backgroundColor": "#ffffff",
+    "selectedColor":"#FFCA0D",
+    "position":"bottom"
+  },
+  "debug":"true"
 }
