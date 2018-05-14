@@ -65,7 +65,7 @@ Page({
     }
     
     var request = {
-      customer_id: 1,
+      customer_id: 'zyf',
       restaurant_id: app.globalData.restInfo.restaurant_id,
       date: util.formatTime(date),
       price: this.data.totalPrice,
@@ -82,6 +82,12 @@ Page({
       },
       success: function(res) {
         console.log(res)
+        wx.showToast({
+          title: '成功',
+          icon: 'succes',
+          duration: 1000,
+          mask: true
+        })
       }
     })
   }

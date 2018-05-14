@@ -22,7 +22,7 @@ Page({
         var latitude = res.latitude // 经度
         var longitude = res.longitude // 纬度
         this.setData({
-          location: latitude+' '+longitude
+          location: latitude + ' ' + longitude
         })
         console.log(this.data.location)
       }
@@ -36,7 +36,7 @@ Page({
       }
     })
   },
-  toOrderPage: function(e) {
+  toOrderPage: function (e) {
     wx.navigateTo({
       url: '../order/order',
     })
@@ -56,6 +56,9 @@ Page({
         foodList: this.data.foodList
       })
     }
+    this.setData({
+      toView: e.target.dataset.foodtype
+    })
   },
   onLoad: function () {
     // if (app.globalData.restInfo) {
@@ -77,25 +80,25 @@ Page({
       this.setData({
         restInfo: app.globalData.restInfo,
       })
-    } 
+    }
 
     var foodList = []
     var foodType = []
     var foodTypeIndex = {}
     var k = 1
 
-    for (var i = 0, l = this.data.restInfo.food.length; i < l; i++){
-      if(!foodTypeIndex[this.data.restInfo.food[i].food_type]){
+    for (var i = 0, l = this.data.restInfo.food.length; i < l; i++) {
+      if (!foodTypeIndex[this.data.restInfo.food[i].food_type]) {
         foodType.push(this.data.restInfo.food[i].food_type)
         foodTypeIndex[this.data.restInfo.food[i].food_type] = k
         k++
       }
     }
-    for (var i = 0, l = foodType.length; i < l; i++){
-      foodList.push({"foodType": foodType[i], item:[]})
+    for (var i = 0, l = foodType.length; i < l; i++) {
+      foodList.push({ "foodType": foodType[i], item: [] })
     }
-    for (var i = 0, l = this.data.restInfo.food.length; i < l; i++){
-      foodList[foodTypeIndex[this.data.restInfo.food[i].food_type]-1].item.push(
+    for (var i = 0, l = this.data.restInfo.food.length; i < l; i++) {
+      foodList[foodTypeIndex[this.data.restInfo.food[i].food_type] - 1].item.push(
         this.data.restInfo.food[i]
       )
     }
@@ -105,12 +108,15 @@ Page({
         restaurantID: this.data.restInfo.restaurant_id,
         restaurantPhone: this.data.restInfo.phone,
       },
-      foodList: foodList
+      foodList: foodList,
+      foodType: foodType,
+      toView: foodType[0]
     })
     console.log(foodList)
+    console.log(foodType)
   },
-  addButtonClick: function(e) {
-    if(!app.globalData.shoppingCart[e.target.dataset.item.food_id])
+  addButtonClick: function (e) {
+    if (!app.globalData.shoppingCart[e.target.dataset.item.food_id])
       app.globalData.shoppingCart[e.target.dataset.item.food_id] = {
         food_id: e.target.dataset.item.food_id,
         food_name: e.target.dataset.item.food_name,
